@@ -40,6 +40,9 @@
         .hero h1 { max-width: 720px; margin: 0; font-family: 'Playfair Display', serif; font-size: clamp(4.2rem, 10vw, 9.5rem); font-weight: 500; line-height: .86; letter-spacing: -.07em; }
         .hero-note { width: 240px; margin: 0 0 6px; font-size: .84rem; line-height: 1.7; }
         .hero-note strong { display: block; margin-bottom: 12px; font: .72rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+        .hero-scroll { position: absolute; z-index: 1; right: max(24px, calc((100% - 1240px) / 2)); bottom: 28px; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.72); font: .62rem 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
+        .hero-scroll::after { content: ""; width: 34px; height: 1px; background: var(--lime); transform-origin: left; animation: scroll-pulse 2.4s ease-in-out infinite; }
+        @keyframes scroll-pulse { 0%, 100% { transform: scaleX(.45); opacity: .45; } 50% { transform: scaleX(1); opacity: 1; } }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 28px; }
         .stream-button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; background: var(--lime); color: var(--ink); text-decoration: none; font: .7rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; transition: background .2s ease, transform .2s ease; }
         .stream-button::after { content: ""; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid currentColor; }
@@ -74,11 +77,26 @@
         .gallery-head h2 { margin: 0; font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 500; letter-spacing: -.045em; }
         .gallery-head p { max-width: 240px; margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.6; text-align: right; }
         .gallery { display: grid; grid-template-columns: 1.35fr .8fr .8fr; grid-template-rows: 240px 240px; gap: 12px; }
-        .gallery figure { margin: 0; overflow: hidden; background: #e8ece6; }
+        .gallery figure { position: relative; margin: 0; overflow: hidden; background: #e8ece6; opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+        .gallery figure[tabindex] { cursor: zoom-in; outline: 0; }
+        .gallery-section.visible .gallery figure { opacity: 1; transform: translateY(0); }
+        .gallery-section.visible .gallery figure:nth-child(2) { transition-delay: .1s; }
+        .gallery-section.visible .gallery figure:nth-child(3) { transition-delay: .2s; }
+        .gallery-section.visible .gallery figure:nth-child(4) { transition-delay: .3s; }
         .gallery figure:first-child { grid-row: span 2; }
         .gallery figure:nth-child(4) { grid-column: span 2; }
         .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
         .gallery figure:hover img { transform: scale(1.03); }
+        .gallery figure:focus-visible { outline: 2px solid var(--lime); outline-offset: 5px; }
+        .gallery-note { position: absolute; right: 12px; bottom: 8px; margin: 0; color: #fff; font: 1.25rem 'Caveat', cursive; letter-spacing: .01em; text-shadow: 0 1px 12px rgba(0,0,0,.65); pointer-events: none; transform: rotate(-3deg); }
+        .gallery figure:nth-child(2) .gallery-note { transform: rotate(2deg); }
+        .gallery figure:nth-child(3) .gallery-note { transform: rotate(-2deg); }
+
+        .lightbox { width: min(900px, calc(100% - 32px)); max-width: none; padding: 12px; border: 0; background: var(--deep); color: #fff; }
+        .lightbox::backdrop { background: rgba(11, 20, 18, .86); }
+        .lightbox img { display: block; width: 100%; max-height: 78vh; object-fit: contain; }
+        .lightbox-close { display: block; margin: 12px 0 0 auto; padding: 8px 0 3px; border: 0; border-bottom: 1px solid rgba(255,255,255,.7); background: transparent; color: #fff; cursor: pointer; font: .68rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+        .lightbox-close:hover { color: var(--lime); border-color: var(--lime); }
 
         .archive { margin-top: 92px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; background: var(--lime); }
         .archive h2 { max-width: 450px; margin: 0; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 500; line-height: 1; letter-spacing: -.045em; }
@@ -104,6 +122,7 @@
             .hero-content { display: block; padding-bottom: 52px; }
             .hero h1 { font-size: clamp(4rem, 20vw, 7rem); }
             .hero-note { margin-top: 32px; }
+            .hero-scroll { right: 16px; bottom: 20px; }
             .social-rail { right: 16px; }
             main { padding-top: 72px; }
             .intro, .release-section { grid-template-columns: 1fr; gap: 38px; padding-bottom: 72px; }
@@ -134,8 +153,9 @@
         <div class="hero-content">
             <div><p class="eyebrow">New artist / 2026</p><h1>myex<br>champagne</h1>
                 <div class="hero-actions"><a class="stream-button" href="listen-now.html">Stream now</a><a class="merch-button" href="merch.html">Shop merch</a></div>
-            </div>
+            </div><p class="hero-note"><strong>Currently listening</strong>To the space between what was and what comes next.</p>
         </div>
+        <div class="hero-scroll" aria-hidden="true">Scroll to explore</div>
     </section>
 
     <main>
@@ -152,10 +172,10 @@
         <section class="shell gallery-section fade-up" id="visuals">
             <div class="gallery-head"><div><p class="section-kicker">03 / The visual archive</p><h2>Seen in passing.</h2></div><p>A small collection of frames from the world around the music.</p></div>
             <div class="gallery">
-                <figure><img src="Assets%20folder/Main%20photo.jpg" alt="myexchampagne portrait, black and white"></figure>
-                <figure><img src="Assets%20folder/Photography.jpg" alt="Photography"></figure>
-                <figure><img src="Assets%20folder/Debut%20song%20art.png" alt="Debut song artwork"></figure>
-                <figure><img src="Assets%20folder/Old%20yt%20header.png" alt="Old yt header"></figure>
+                <figure tabindex="0" role="button" aria-label="Open portrait"><img src="Assets%20folder/Main%20photo.jpg" alt="myexchampagne portrait, black and white"><figcaption class="gallery-note">late light</figcaption></figure>
+                <figure tabindex="0" role="button" aria-label="Open photography"><img src="Assets%20folder/Photography.jpg" alt="Photography"><figcaption class="gallery-note">in passing</figcaption></figure>
+                <figure tabindex="0" role="button" aria-label="Open debut artwork"><img src="Assets%20folder/Debut%20song%20art.png" alt="Debut song artwork"><figcaption class="gallery-note">the first one</figcaption></figure>
+                <figure tabindex="0" role="button" aria-label="Open old YouTube header"><img src="Assets%20folder/Old%20yt%20header.png" alt="Old yt header"><figcaption class="gallery-note">somewhere near here</figcaption></figure>
             </div>
         </section>
 
@@ -170,6 +190,11 @@
             </div>
         </section>
     </main>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Expanded image">
+        <img id="lightboxImage" src="" alt="">
+        <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+    </dialog>
 
     <footer class="shell">
         <p class="footer-signature">myexchampagne</p>
@@ -188,6 +213,27 @@
     <script>
         const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
         document.querySelectorAll('.fade-up').forEach((element) => observer.observe(element));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const galleryItems = document.querySelectorAll('.gallery figure[tabindex]');
+        const openLightbox = (item) => {
+            const image = item.querySelector('img');
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.showModal();
+        };
+        galleryItems.forEach((item) => {
+            item.addEventListener('click', () => openLightbox(item));
+            item.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openLightbox(item);
+                }
+            });
+        });
+        lightboxClose.addEventListener('click', () => lightbox.close());
+        lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
         document.getElementById('preSaveButton').addEventListener('click', () => {
             document.getElementById('releaseStatus').textContent = 'You are on the early list';
         });
