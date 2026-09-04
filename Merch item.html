@@ -11,7 +11,9 @@
     <style>
         :root { --ink: #17211f; --muted: #71807b; --paper: #fbfbf8; --line: #dfe5df; --lime: #c9dd55; --deep: #243b36; }
         * { box-sizing: border-box; }
-        body { margin: 0; color: var(--ink); background: var(--paper); font-family: Manrope, sans-serif; }
+        body { position: relative; isolation: isolate; min-height: 100vh; margin: 0; color: var(--ink); background: var(--paper); background-image: radial-gradient(ellipse at 50% 112%, rgba(142,149,145,.16), transparent 54%), linear-gradient(174deg, transparent 66%, rgba(182,188,184,.08) 84%, rgba(145,153,149,.13) 100%); font-family: Manrope, sans-serif; }
+        body::before { content: ''; position: fixed; z-index: 0; inset: 0; pointer-events: none; opacity: .62; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .42 0 0 0 0 .44 0 0 0 0 .42 0 0 0 .24 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mask-image: linear-gradient(to bottom, transparent 57%, #000 78%, #000); }
+        body > * { position: relative; z-index: 1; }
         a { color: inherit; }
         .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
         header { border-bottom: 1px solid var(--line); }
