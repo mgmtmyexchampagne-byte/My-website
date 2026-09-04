@@ -84,6 +84,7 @@
         .archive-form input { min-width: 0; flex: 1; padding: 14px 0; border: 0; outline: 0; background: transparent; color: var(--ink); }
         .archive-form input::placeholder { color: #546447; }
         .archive-form button { padding: 14px 0 14px 18px; border: 0; background: transparent; cursor: pointer; font: .7rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+        .archive-status { margin: 12px 0 0; font-size: .78rem; }
 
         footer { padding: 30px 0 42px; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; color: var(--muted); font: .68rem 'DM Mono', monospace; letter-spacing: .07em; text-transform: uppercase; }
         footer p { margin: 0; }
@@ -158,7 +159,13 @@
 
         <section class="shell archive fade-up" id="archive">
             <h2>Be around for the beginning.</h2>
-            <form class="archive-form" id="archiveForm"><input type="email" id="email" placeholder="Your email address" aria-label="Your email address" required><button type="submit">Join the list</button></form>
+            <div>
+                <form class="archive-form" id="archiveForm" action="https://app.kit.com/forms/9880878/subscriptions" method="post">
+                    <input type="email" id="email" name="email_address" placeholder="Your email address" aria-label="Your email address" required>
+                    <button type="submit">Join the list</button>
+                </form>
+                <p class="archive-status" id="archiveStatus" aria-live="polite"></p>
+            </div>
         </section>
     </main>
 
@@ -182,11 +189,31 @@
         document.getElementById('preSaveButton').addEventListener('click', () => {
             document.getElementById('releaseStatus').textContent = 'You are on the early list';
         });
-        document.getElementById('archiveForm').addEventListener('submit', (event) => {
+        document.getElementById('archiveForm').addEventListener('submit', async (event) => {
             event.preventDefault();
-            const button = event.currentTarget.querySelector('button');
-            button.textContent = 'You are in';
-            event.currentTarget.querySelector('input').value = '';
+            const form = event.currentTarget;
+            const button = form.querySelector('button');
+            const input = form.querySelector('input');
+            const status = document.getElementById('archiveStatus');
+            button.disabled = true;
+            button.textContent = 'Joining...';
+            status.textContent = '';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form))
+                });
+                if (!response.ok) throw new Error('Subscription failed');
+                input.value = '';
+                button.textContent = 'You are in';
+                status.textContent = 'Check your email to confirm your subscription.';
+            } catch (error) {
+                button.disabled = false;
+                button.textContent = 'Join the list';
+                status.textContent = 'Something went wrong. Please try again.';
+            }
         });
     </script>
 </body>
