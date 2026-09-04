@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Turn T-shirt. Coming soon from myexchampagne.">
+    <title>My Turn T-shirt | myexchampagne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink: #17211f; --muted: #71807b; --paper: #fbfbf8; --line: #dfe5df; --lime: #c9dd55; --deep: #243b36; }
+        * { box-sizing: border-box; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font-family: Manrope, sans-serif; }
+        a { color: inherit; }
+        .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+        header { border-bottom: 1px solid var(--line); }
+        nav { display: flex; align-items: center; justify-content: space-between; padding: 25px 0; }
+        .wordmark { font-family: Caveat, cursive; font-size: 1.8rem; font-weight: 600; text-decoration: none; }
+        .back-link { color: var(--muted); font: .68rem 'DM Mono', monospace; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+        .back-link:hover { color: var(--ink); }
+        main { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); gap: clamp(45px, 8vw, 110px); padding: 72px 0 110px; align-items: center; }
+        .product-image { position: relative; aspect-ratio: 1 / 1.05; display: grid; place-items: center; overflow: hidden; background: #e3e8e1; border: 1px solid var(--line); }
+        .product-image::before { content: ''; width: 47%; height: 63%; background: rgba(255,255,255,.62); filter: blur(18px); clip-path: polygon(26% 0, 74% 0, 100% 19%, 87% 36%, 86% 100%, 14% 100%, 13% 36%, 0 19%); }
+        .product-image::after { content: 'IMAGE COMING SOON'; position: absolute; color: rgba(23,33,31,.32); font: .65rem 'DM Mono', monospace; letter-spacing: .12em; transform: rotate(-18deg); }
+        .details .kicker { margin: 0 0 18px; color: var(--muted); font: .68rem 'DM Mono', monospace; letter-spacing: .13em; text-transform: uppercase; }
+        h1 { margin: 0 0 18px; font-size: clamp(2.4rem, 5vw, 4.8rem); font-weight: 800; letter-spacing: -.08em; line-height: .9; text-transform: uppercase; }
+        .price { margin: 0 0 30px; font: 1rem 'DM Mono', monospace; }
+        .price s { margin-right: 11px; color: #a3aaa4; }
+        .select-label { display: block; margin-bottom: 10px; font: .65rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+        .sizes { display: flex; gap: 8px; margin-bottom: 25px; }
+        .size { min-width: 45px; padding: 12px 8px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; font: .68rem 'DM Mono', monospace; }
+        .size:hover, .size.selected { background: var(--ink); color: #fff; }
+        .coming-button { width: 100%; padding: 16px; border: 0; background: var(--deep); color: #fff; cursor: pointer; font: .68rem 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+        .coming-button:hover { background: #38564d; }
+        .status { min-height: 20px; margin: 13px 0 25px; color: var(--muted); font-size: .78rem; }
+        .description { padding-top: 23px; border-top: 1px solid var(--line); color: #465650; font-size: .86rem; line-height: 1.8; }
+        footer { display: flex; justify-content: space-between; padding-bottom: 35px; color: var(--muted); font: .65rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+        .footer-signature { color: var(--ink); font: 1.8rem 'Caveat', cursive; font-weight: 600; letter-spacing: .01em; text-transform: none; }
+        @media (max-width: 720px) { .shell { width: min(100% - 32px, 1180px); } main { grid-template-columns: 1fr; padding-top: 48px; gap: 45px; } .product-image { max-width: 600px; } footer { display: block; line-height: 2; } }
+    </style>
+</head>
+<body>
+    <header><nav class="shell"><a class="wordmark" href="index.html">myexchampagne</a><a class="back-link" href="Merch.html">Back to merch</a></nav></header>
+    <main class="shell">
+        <div class="product-image" role="img" aria-label="Blurred placeholder for My Turn T-shirt"></div>
+        <section class="details" aria-labelledby="product-title">
+            <p class="kicker">My Turn / 001</p>
+            <h1 id="product-title">My Turn<br>T-shirt</h1>
+            <p class="price"><s>$38.00 USD</s>$28.00 USD</p>
+            <span class="select-label">Select a size</span>
+            <div class="sizes"><button class="size" type="button">S</button><button class="size" type="button">M</button><button class="size" type="button">L</button><button class="size" type="button">XL</button></div>
+            <button class="coming-button" id="comingButton" type="button">Coming soon</button>
+            <p class="status" id="status" aria-live="polite">This piece will be available with the first merch drop.</p>
+            <p class="description">A placeholder for the first myexchampagne tee. Final garment, print, sizing, and shipping details will be shared when the store opens.</p>
+        </section>
+    </main>
+    <footer class="shell"><span class="footer-signature">myexchampagne</span><span>Designed by Champagne</span></footer>
+    <script>
+        document.querySelectorAll('.size').forEach((size) => size.addEventListener('click', () => {
+            document.querySelectorAll('.size').forEach((option) => option.classList.remove('selected'));
+            size.classList.add('selected');
+        }));
+        document.getElementById('comingButton').addEventListener('click', () => {
+            document.getElementById('status').textContent = 'Coming soon. Join the early access list for the drop announcement.';
+        });
+    </script>
+</body>
+</html>
