@@ -151,7 +151,7 @@
     <section class="hero" id="top">
         <img class="hero-photo" src="Assets%20folder/Main-photo.jpg" alt="myexchampagne portrait">
         <div class="hero-content">
-            <div><p class="eyebrow">New artist / 2026</p><h1>myex<br>champagne</h1>
+            <div><p class="eyebrow">Debut single / October 2026</p><h1>myex<br>champagne</h1>
                 <div class="hero-actions"><a class="stream-button" href="listen now.html">Stream now</a><a class="merch-button" href="merch.html">Shop merch</a></div>
             </div><p class="hero-note"><strong>Currently listening</strong>To being a product of the mind; NOT the environment.</p>
         </div>
@@ -165,8 +165,8 @@
         </section>
 
         <section class="shell release-section fade-up" id="music">
-            <div><p class="section-kicker">02 / First release</p><h2 class="release-title">Untitled.<br>For now.</h2><p class="release-meta">Debut single<br>Coming soon in 2026</p></div>
-            <div><div class="release-art"><img src="Assets%20folder/Debut%20song%20art.png" alt="myexchampagne Debut song artwork"></div><div class="release-actions"><button class="primary-button" id="preSaveButton">Pre-save now</button><span id="releaseStatus">Early access opens soon</span></div></div>
+            <div><p class="section-kicker">02 / First release</p><h2 class="release-title">Yes I'm<br>Single.</h2><p class="release-meta">Official release / October 2, 2026<br>Clean version / October 3, 2026</p></div>
+            <div><div class="release-art"><img src="Assets%20folder/Debut%20song%20art.png" alt="Yes I'm Single single artwork"></div><div class="release-actions"><button class="primary-button" id="preSaveButton">Join release list</button><span id="releaseStatus" aria-live="polite">23 days until release</span></div></div>
         </section>
 
         <section class="shell gallery-section fade-up" id="visuals">
@@ -234,8 +234,16 @@
         });
         lightboxClose.addEventListener('click', () => lightbox.close());
         lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+        const releaseStatus = document.getElementById('releaseStatus');
+        const releaseDate = new Date('2026-10-02T00:00:00');
+        const updateReleaseCountdown = () => {
+            const daysRemaining = Math.ceil((releaseDate - new Date()) / 86400000);
+            releaseStatus.textContent = daysRemaining > 0 ? `${daysRemaining} days until release` : 'Out now';
+        };
+        updateReleaseCountdown();
+        window.setInterval(updateReleaseCountdown, 60000);
         document.getElementById('preSaveButton').addEventListener('click', () => {
-            document.getElementById('releaseStatus').textContent = 'You are on the early list';
+            releaseStatus.textContent = 'You are on the release list';
         });
         document.getElementById('archiveForm').addEventListener('submit', async (event) => {
             event.preventDefault();
