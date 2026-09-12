@@ -79,6 +79,8 @@
         .service-icon-letter { display: grid; place-items: center; border-radius: 50%; background: #f34a5e; color: #fff; font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; }
         .service-label { font-size: .84rem; font-weight: 600; }
         .service-arrow { margin-left: auto; font-size: 1.2rem; }
+        .image-license { display: inline-block; margin-top: 10px; color: var(--muted); font: .62rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+        .image-license:hover { color: var(--ink); }
         footer { display: flex; align-items: center; justify-content: space-between; padding: 0 0 28px; color: var(--muted); font: .65rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
         .footer-signature { color: var(--ink); font: 1.8rem 'Caveat', cursive; font-weight: 600; letter-spacing: .01em; text-transform: none; }
 
@@ -100,7 +102,11 @@
             <section class="listening-panel" aria-labelledby="listen-heading">
                 <h1 id="listen-heading">Listen now</h1>
                 <div class="cover">
-                    <img src="Assets folder/myexchampagne-artist-Main-photo-alt.jpg" alt="Official myexchampagne artist press photo, 2026 release">
+                    <div itemscope itemtype="https://schema.org/ImageObject">
+                        <img itemprop="contentUrl" src="Assets folder/myexchampagne-artist-Main-photo-alt.jpg" alt="Official myexchampagne artist press photo, 2026 release">
+                        <a class="image-license" itemprop="acquireLicensePage" href="license.html">Image license</a>
+                        <a class="image-license" itemprop="license" href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
+                    </div>
                 </div>
                 <p class="release-name">Yes I'm Single</p>
                 <p class="release-note">Official release / October 2, 2026<br>Clean version / October 3, 2026</p>
