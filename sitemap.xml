@@ -4,89 +4,41 @@
   <url>
     <loc>https://myexchampagne.com/</loc>
     <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
+      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
       <image:title>myexchampagne artist press photo</image:title>
       <image:caption>Official myexchampagne artist press photography.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/myexchampagne-artist-Photography.jpg</image:loc>
+      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Photography.jpg</image:loc>
       <image:title>myexchampagne artist photography</image:title>
       <image:caption>Official photography from music artist myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/myexchampagne-artist-Debut-song-art.jpg</image:loc>
+      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Debut-song-art.jpg</image:loc>
       <image:title>Yes I'm Single single artwork</image:title>
       <image:caption>Official debut single artwork for Yes I'm Single by myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/myexchampagne-artist-Old-YouTube-header.png</image:loc>
+      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Old-YouTube-header.png</image:loc>
       <image:title>myexchampagne artist YouTube header</image:title>
       <image:caption>Official YouTube header artwork for myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Facebook%20Icon.png</image:loc>
-      <image:title>myexchampagne Facebook icon</image:title>
-      <image:caption>Official myexchampagne Facebook social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Insta%20Icon.png</image:loc>
-      <image:title>myexchampagne Instagram icon</image:title>
-      <image:caption>Official myexchampagne Instagram social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Twitter%20Icon.png</image:loc>
-      <image:title>myexchampagne Twitter icon</image:title>
-      <image:caption>Official myexchampagne Twitter social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/YT%20Icon.png</image:loc>
-      <image:title>myexchampagne YouTube icon</image:title>
-      <image:caption>Official myexchampagne YouTube social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Spotify%20Icon.png</image:loc>
-      <image:title>myexchampagne Spotify icon</image:title>
-      <image:caption>Official myexchampagne Spotify social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/TT%20Icon.png</image:loc>
-      <image:title>myexchampagne TikTok icon</image:title>
-      <image:caption>Official myexchampagne TikTok social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Genius%20Iconn.png</image:loc>
-      <image:title>myexchampagne Genius icon</image:title>
-      <image:caption>Official myexchampagne Genius social media icon.</image:caption>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
   </url>
   <url>
-    <loc>https://myexchampagne.com/listen%20now.html</loc>
+    <loc>https://myexchampagne.com/listen-now.html</loc>
     <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
+      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
       <image:title>myexchampagne artist press photo</image:title>
       <image:caption>Official myexchampagne artist press photography.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
-      <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://myexchampagne.com/Assets%20folder/Social%20Media%20Icons/Spotify%20Icon.png</image:loc>
-      <image:title>myexchampagne Spotify icon</image:title>
-      <image:caption>Official myexchampagne Spotify social media icon.</image:caption>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
   </url>
