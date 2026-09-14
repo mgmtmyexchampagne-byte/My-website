@@ -4,28 +4,28 @@
   <url>
     <loc>https://myexchampagne.com/</loc>
     <image:image>
-      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
+      <image:loc>https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
       <image:title>myexchampagne artist press photo</image:title>
       <image:caption>Official myexchampagne artist press photography.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Photography.jpg</image:loc>
+      <image:loc>https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Photography.jpg</image:loc>
       <image:title>myexchampagne artist photography</image:title>
       <image:caption>Official photography from music artist myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Debut-song-art.jpg</image:loc>
+      <image:loc>https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Debut-song-art.jpg</image:loc>
       <image:title>Yes I'm Single single artwork</image:title>
       <image:caption>Official debut single artwork for Yes I'm Single by myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
       <image:license>https://creativecommons.org/licenses/by-nd/4.0/</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Old-YouTube-header.png</image:loc>
+      <image:loc>https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Old-YouTube-header.png</image:loc>
       <image:title>myexchampagne artist YouTube header</image:title>
       <image:caption>Official YouTube header artwork for myexchampagne.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
@@ -35,7 +35,7 @@
   <url>
     <loc>https://myexchampagne.com/listen-now.html</loc>
     <image:image>
-      <image:loc>https://myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
+      <image:loc>https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg</image:loc>
       <image:title>myexchampagne artist press photo</image:title>
       <image:caption>Official myexchampagne artist press photography.</image:caption>
       <image:geo_location>Arizona, United States</image:geo_location>
