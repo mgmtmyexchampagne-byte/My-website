@@ -158,9 +158,11 @@
         .release-art .image-license + .image-license { bottom: 28px; }
         .release-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; display: block; }
         .release-actions { display: flex; align-items: center; gap: 24px; margin-top: 22px; }
-        .primary-button { border: 0; padding: 14px 20px; background: var(--deep); color: #fff; cursor: pointer; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+        .primary-button { display: inline-flex; align-items: center; border: 0; padding: 14px 20px; background: var(--deep); color: #fff; font-size: .72rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
         .primary-button:hover { background: #38564d; }
-        .release-actions span { font: .7rem 'DM Mono', monospace; color: var(--muted); }
+        .release-status { display: inline-flex; align-items: center; min-height: 42px; padding: 0 14px; border: 1px solid var(--line); color: var(--muted); font: .68rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+        .release-status.is-live { gap: 9px; border-color: var(--lime); background: var(--lime); color: var(--ink); }
+        .release-status.is-live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px rgba(36, 59, 54, .14); }
 
         .gallery-section { padding: 92px 0 30px; }
         .gallery-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px; }
@@ -265,7 +267,7 @@
 
         <section class="shell release-section fade-up" id="music">
             <div><p class="section-kicker">02 / First release</p><h2 class="release-title">Yes I'm<br>Single.</h2><p class="release-meta">Official release / October 2, 2026<br>Clean version / October 3, 2026</p></div>
-            <div><div class="release-art" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="contentUrl" src="https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Debut-song-art.jpg" alt="Official Yes I'm Single debut single artwork by music artist myexchampagne, 2026 release"><span itemprop="creator" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="myexchampagne"></span><meta itemprop="copyrightNotice" content="Copyright 2026 myexchampagne. All rights reserved."><meta itemprop="creditText" content="myexchampagne"><a class="image-license" itemprop="acquireLicensePage" href="license.html">Image license</a><a class="image-license" itemprop="license" href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a></div><div class="release-actions"><button class="primary-button" id="preSaveButton">Join release list</button><span id="releaseStatus" aria-live="polite">23 days until release</span></div></div>
+            <div><div class="release-art" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="contentUrl" src="https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Debut-song-art.jpg" alt="Official Yes I'm Single debut single artwork by music artist myexchampagne, 2026 release"><span itemprop="creator" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="myexchampagne"></span><meta itemprop="copyrightNotice" content="Copyright 2026 myexchampagne. All rights reserved."><meta itemprop="creditText" content="myexchampagne"><a class="image-license" itemprop="acquireLicensePage" href="license.html">Image license</a><a class="image-license" itemprop="license" href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a></div><div class="release-actions"><a class="primary-button" href="https://music.apple.com/us/artist/myexchampagne/6810050945" target="_blank" rel="noopener">Listen on Apple Music</a><span class="release-status" id="releaseStatus" aria-live="polite">Out now</span></div></div>
         </section>
 
         <section class="shell gallery-section fade-up" id="visuals">
@@ -337,13 +339,12 @@
         const releaseDate = new Date('2026-10-02T00:00:00');
         const updateReleaseCountdown = () => {
             const daysRemaining = Math.ceil((releaseDate - new Date()) / 86400000);
-            releaseStatus.textContent = daysRemaining > 0 ? `${daysRemaining} days until release` : 'Out now';
+            const isLive = daysRemaining <= 0;
+            releaseStatus.textContent = isLive ? 'Out now' : `${daysRemaining} days until release`;
+            releaseStatus.classList.toggle('is-live', isLive);
         };
         updateReleaseCountdown();
         window.setInterval(updateReleaseCountdown, 60000);
-        document.getElementById('preSaveButton').addEventListener('click', () => {
-            releaseStatus.textContent = 'You are on the release list';
-        });
         document.getElementById('archiveForm').addEventListener('submit', async (event) => {
             event.preventDefault();
             const form = event.currentTarget;
