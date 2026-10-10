@@ -46,6 +46,27 @@
         "@id": "https://www.tiktok.com/@myexchampagne"
       },
       {
+        "@id": "https://www.wikidata.org/wiki/Q141437568"
+      },
+      {
+        "@id": "https://music.apple.com/us/artist/myexchampagne/6810050945"
+      },
+      {
+        "@id": "https://open.spotify.com/artist/46CH1iOgNO7npPjFYq75Z9"
+      },
+      {
+        "@id": "https://tidal.com/artist/85675033"
+      },
+      {
+        "@id": "https://www.deezer.com/artist/415278742"
+      },
+      {
+        "@id": "https://soundcloud.com/myexchampagne"
+      },
+      {
+        "@id": "https://www.youtube.com/channel/UCUPCg4iKBx0-jy54_OQvDIg"
+      },
+      {
         "@id": "https://genius.com/artists/myexchampagne"
       },
       {
@@ -61,6 +82,27 @@
     "https://schema.org/url": [
       {
         "@id": "https://myexchampagne.com/"
+      }
+    ]
+  },
+  {
+    "@id": "https://myexchampagne.com/#yes-im-single-track",
+    "@type": [
+      "https://schema.org/MusicRecording"
+    ],
+    "https://schema.org/byArtist": [
+      {
+        "@id": "https://myexchampagne.com/#artist"
+      }
+    ],
+    "https://schema.org/inAlbum": [
+      {
+        "@id": "https://myexchampagne.com/#yes-im-single"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Yes I'm Single"
       }
     ]
   },
@@ -93,27 +135,6 @@
     "https://schema.org/track": [
       {
         "@id": "https://myexchampagne.com/#yes-im-single-track"
-      }
-    ]
-  },
-  {
-    "@id": "https://myexchampagne.com/#yes-im-single-track",
-    "@type": [
-      "https://schema.org/MusicRecording"
-    ],
-    "https://schema.org/byArtist": [
-      {
-        "@id": "https://myexchampagne.com/#artist"
-      }
-    ],
-    "https://schema.org/inAlbum": [
-      {
-        "@id": "https://myexchampagne.com/#yes-im-single"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Yes I'm Single"
       }
     ]
   }
