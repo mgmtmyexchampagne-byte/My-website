@@ -64,6 +64,9 @@
         "@id": "https://soundcloud.com/myexchampagne"
       },
       {
+        "@id": "https://audiomack.com/myexchampagne"
+      },
+      {
         "@id": "https://www.youtube.com/channel/UCUPCg4iKBx0-jy54_OQvDIg"
       },
       {
@@ -82,27 +85,6 @@
     "https://schema.org/url": [
       {
         "@id": "https://myexchampagne.com/"
-      }
-    ]
-  },
-  {
-    "@id": "https://myexchampagne.com/#yes-im-single-track",
-    "@type": [
-      "https://schema.org/MusicRecording"
-    ],
-    "https://schema.org/byArtist": [
-      {
-        "@id": "https://myexchampagne.com/#artist"
-      }
-    ],
-    "https://schema.org/inAlbum": [
-      {
-        "@id": "https://myexchampagne.com/#yes-im-single"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Yes I'm Single"
       }
     ]
   },
@@ -135,6 +117,27 @@
     "https://schema.org/track": [
       {
         "@id": "https://myexchampagne.com/#yes-im-single-track"
+      }
+    ]
+  },
+  {
+    "@id": "https://myexchampagne.com/#yes-im-single-track",
+    "@type": [
+      "https://schema.org/MusicRecording"
+    ],
+    "https://schema.org/byArtist": [
+      {
+        "@id": "https://myexchampagne.com/#artist"
+      }
+    ],
+    "https://schema.org/inAlbum": [
+      {
+        "@id": "https://myexchampagne.com/#yes-im-single"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Yes I'm Single"
       }
     ]
   }
