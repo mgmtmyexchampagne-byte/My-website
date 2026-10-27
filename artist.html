@@ -13,36 +13,55 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "myexxchampagne",
-            "alternateName": "Amir Kayon Campbell-Walker",
-            "url": "https://myexchampagne.com/artist.html",
-            "image": "https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg",
-            "jobTitle": "Recording artist, mix engineer and writer",
-            "description": "myexxchampagne is a music artist and writer from Milwaukee, Wisconsin, based in Arizona.",
-            "sameAs": [
-                "https://myexchampagne.com/",
-                "https://www.instagram.com/myexxchampagne",
-                "https://x.com/myexxchampagne",
-                "https://www.youtube.com/@myexxchampagne",
-                "https://www.youtube.com/channel/UCUPCg4iKBx0-jy54_OQvDIg",
-                "https://music.youtube.com/@myexchampagne",
-                "https://www.tiktok.com/@myexxchampagne",
-                "https://genius.com/artists/myexxchampagne",
-                "https://substack.com/@mcereports",
-                "https://medium.com/@mgmt.myexchampagne",
-                "https://www.reddit.com/r/myexchampagne/",
-                "https://musicbrainz.org/artist/7b461865-b74a-49ff-9cbe-e0ba481ea50f",
-                "https://www.wikidata.org/wiki/Q141437568",
-                "https://music.apple.com/us/artist/myexchampagne/6810050945",
-                "https://open.spotify.com/artist/46CH1iOgNO7npPjFYq75Z9",
-                "https://music.amazon.com.au/artists/B0HJ92WSNV/myexchampagne",
-                "https://tidal.com/artist/85675033",
-                "https://www.deezer.com/artist/415278742",
-                "https://soundcloud.com/myexxchampagne",
-                "https://audiomack.com/myexxchampagne",
-                "https://isni.org/isni/0000000530964203",
-                "https://orcid.org/0009-0006-9246-2158"
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "@id": "https://myexchampagne.com/#artist",
+                    "name": "myexxchampagne",
+                    "alternateName": "Amir Kayon Campbell-Walker",
+                    "url": "https://myexchampagne.com/artist.html",
+                    "image": "https://assets.myexchampagne.com/assets-folder/myexchampagne-artist-Main-photo-alt.jpg",
+                    "jobTitle": "Recording artist, mix engineer and writer",
+                    "description": "myexxchampagne is a music artist and writer from Milwaukee, Wisconsin, based in Arizona.",
+                    "affiliation": {
+                        "@id": "https://myexchampagne.com/#pour-everything-records"
+                    },
+                    "sameAs": [
+                        "https://myexchampagne.com/",
+                        "https://www.instagram.com/myexxchampagne",
+                        "https://x.com/myexxchampagne",
+                        "https://www.youtube.com/@myexxchampagne",
+                        "https://www.youtube.com/channel/UCUPCg4iKBx0-jy54_OQvDIg",
+                        "https://music.youtube.com/@myexchampagne",
+                        "https://www.tiktok.com/@myexxchampagne",
+                        "https://genius.com/artists/myexxchampagne",
+                        "https://substack.com/@mcereports",
+                        "https://medium.com/@mgmt.myexchampagne",
+                        "https://www.reddit.com/r/myexchampagne/",
+                        "https://musicbrainz.org/artist/7b461865-b74a-49ff-9cbe-e0ba481ea50f",
+                        "https://www.wikidata.org/wiki/Q141437568",
+                        "https://music.apple.com/us/artist/myexchampagne/6810050945",
+                        "https://open.spotify.com/artist/46CH1iOgNO7npPjFYq75Z9",
+                        "https://music.amazon.com.au/artists/B0HJ92WSNV/myexchampagne",
+                        "https://tidal.com/artist/85675033",
+                        "https://www.deezer.com/artist/415278742",
+                        "https://soundcloud.com/myexxchampagne",
+                        "https://audiomack.com/myexxchampagne",
+                        "https://isni.org/isni/0000000530964203",
+                        "https://orcid.org/0009-0006-9246-2158"
+                    ]
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://myexchampagne.com/#pour-everything-records",
+                    "name": "POUR EVERYTHING Records",
+                    "description": "Independent record label founded by myexxchampagne.",
+                    "url": "https://myexchampagne.com/artist.html#pour-everything",
+                    "logo": "https://assets.myexchampagne.com/assets-folder/Pour-%20Everything-logo-2.PNG",
+                    "founder": {
+                        "@id": "https://myexchampagne.com/#artist"
+                    }
+                }
             ]
         }
     </script>
@@ -79,6 +98,16 @@
         .intro-copy p { margin: 0 0 22px; }
         .intro-copy p:last-child { margin-bottom: 0; }
         .profile-photo { width: 100%; max-width: 470px; margin-top: 34px; aspect-ratio: 1404 / 1359; object-fit: cover; display: block; }
+        .label-section { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 56px; padding: 48px; background: var(--deep); color: var(--paper); }
+        .label-section .section-kicker { color: #c9d6ce; }
+        .label-section h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: .98; }
+        .label-section h2 span { color: var(--lime); }
+        .label-copy { max-width: 500px; color: #e2e8e3; font-size: .96rem; line-height: 1.85; }
+        .label-copy p { margin: 0 0 18px; }
+        .label-copy p:last-child { margin-bottom: 0; }
+        .label-logos { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12px; margin-top: 28px; }
+        .label-logo { display: grid; place-items: center; min-height: 150px; padding: 18px; background: var(--paper); }
+        .label-logo img { display: block; width: 100%; max-width: 200px; max-height: 150px; object-fit: contain; }
         .story-section { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; padding: 86px 0; border-bottom: 1px solid var(--line); }
         .story-section h2 { margin: 0; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: .98; }
         .story-copy { max-width: 650px; color: #465650; font-size: .96rem; line-height: 1.85; }
@@ -115,6 +144,9 @@
             main { padding-top: 64px; }
             .profile-intro, .story-section { grid-template-columns: 1fr; gap: 42px; padding-bottom: 68px; }
             .profile-photo { margin-top: 28px; }
+            .label-section { grid-template-columns: 1fr; gap: 28px; margin-top: 40px; padding: 32px 24px; }
+            .label-logos { grid-template-columns: 1fr 1fr; }
+            .label-logo { min-height: 120px; padding: 12px; }
             .story-section { padding: 68px 0; }
             .fact-section { padding-top: 68px; }
             .fact-grid { grid-template-columns: 1fr; }
@@ -143,6 +175,21 @@
                 <p>myexxchampagne is the working name of Amir Kayon Campbell-Walker, a musician and writer from Milwaukee, Wisconsin, now based in Arizona.</p>
                 <p>The music comes from a state of deep melancholy, what was left unsaid, and what still needs somewhere to go. The songs are personal, but they are not trying to give every feeling a neat ending.</p>
                 <p>This page is a little more direct about the person behind the name: the places that shaped him, the equipment he started with, and the habits that kept him making things when nothing else felt especially clear.</p>
+            </div>
+        </section>
+
+        <section class="shell label-section" id="pour-everything" aria-labelledby="label-heading">
+            <div>
+                <p class="section-kicker">Independent by design / 2026</p>
+                <h2 id="label-heading">myexxchampagne,<br><span>signed to POUR EVERYTHING</span></h2>
+                <div class="label-logos" aria-label="POUR EVERYTHING Records logos">
+                    <div class="label-logo"><img src="assets-folder/Pour-%20Everything-logo.PNG" alt="POUR EVERYTHING Records horse emblem"></div>
+                    <div class="label-logo"><img src="assets-folder/Pour-%20Everything-logo-2.PNG" alt="POUR EVERYTHING Records full logo"></div>
+                </div>
+            </div>
+            <div class="label-copy">
+                <p>POUR EVERYTHING Records is the independent label founded by myexxchampagne. He is building it from the ground up while releasing music on his own terms—as founder and as an artist officially signed to the label.</p>
+                <p>This is the home for the sound, the work, and everything still to come.</p>
             </div>
         </section>
 
@@ -267,8 +314,8 @@
 
     <footer class="shell">
         <span class="footer-signature">myexxchampagne</span>
-        <span>Documented and curated by Christian</span>
-        <span>Copyright 2026 myexxchampagne</span>
+        <span>Signed to POUR EVERYTHING</span>
+        <span>℗ 2026 POUR EVERYTHING Records. All Rights Reserved.</span>
     </footer>
 </body>
 </html>
